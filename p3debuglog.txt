@@ -1,0 +1,52 @@
+Reading symbols from a.out...done.
+(gdb) b
+No default breakpoint address now.
+(gdb) b main
+Breakpoint 1 at 0x7fc: file p3final.c, line 16.
+(gdb) r
+Starting program: /home/runner/pps-test1-likitha1811-28/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p3final.c:16
+16  {
+(gdb) n
+17    int a,b, s=0;
+(gdb) s
+18    input(&a,&b);
+(gdb) s
+input (a=0x7ffcc34625bc, b=0x7ffcc34625c0) at p3final.c:4
+4     printf("enter two numbers:\n");
+(gdb) n
+enter two numbers:
+5     scanf("%d%d",a,b);
+(gdb) n
+1
+2
+6   }
+(gdb) n
+main () at p3final.c:19
+19    add(a,b,&s);
+(gdb) s
+add (a=1, b=2, s=0x7ffcc34625c4) at p3final.c:9
+9     *s=a+b;
+(gdb) n
+10  }
+(gdb) n
+main () at p3final.c:20
+20    output(a,b,s);
+(gdb) s
+output (a=1, b=2, s=3) at p3final.c:13
+13    printf("sum of %d + %d = %d\n",a,b,s);
+(gdb) n
+sum of 1 + 2 = 3
+14  }
+(gdb) n
+main () at p3final.c:21
+21    return 0;
+(gdb) n
+22  }(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 155] will be killed.
+
+Quit anyway? (y or n)
