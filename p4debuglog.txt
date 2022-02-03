@@ -1,0 +1,68 @@
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x7fa: file p4original.c, line 22.
+(gdb) r
+Starting program: /home/runner/pps-test1-likitha1811-29/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:22
+22    a=input();
+(gdb) s
+input () at p4original.c:13
+13  {
+(gdb) n
+15    printf("enter three numbers to be compared\n");
+(gdb) n
+enter three numbers to be compared
+16    scanf("%d",&x);
+(gdb) n
+4
+17    return x;
+(gdb) n
+18  }
+(gdb) n
+main () at p4original.c:23
+23    b=input();
+(gdb) s
+input () at p4original.c:13
+13  {
+(gdb) n
+15    printf("enter three numbers to be compared\n");
+(gdb) n
+enter three numbers to be compared
+16    scanf("%d",&x);
+(gdb) n
+6
+17    return x;
+(gdb) n
+18  }
+(gdb) n
+main () at p4original.c:24
+24    c=input();
+(gdb) s
+input () at p4original.c:13
+13  {
+(gdb) n
+15    printf("enter three numbers to be compared\n");
+(gdb) n
+enter three numbers to be compared
+16    scanf("%d",&x);
+(gdb) n
+8
+17    return x;
+(gdb) n
+18  }
+(gdb) n
+main () at p4original.c:25
+25    printf("the largest number is %d \n",cmp(a,b,c));
+(gdb) n
+the largest number is 8 
+26    return 0;
+(gdb) n
+27  }
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 177] will be killed.
+
+Quit anyway? (y or n) 
