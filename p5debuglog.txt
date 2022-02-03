@@ -1,0 +1,63 @@
+
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x828: file p5original.c, line 22.
+(gdb) r
+Starting program: /home/runner/pps-test1-likitha1811-31/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5original.c:22
+22  {
+(gdb) n
+24    input(&a,&b,&c);
+(gdb) s
+input (a=0x7ffd268e71e8, b=0x7ffd268e71ec, c=0x7ffd268e71f0) at p5original.c:4
+4     printf("enter three numbers\n");
+(gdb) n
+enter three numbers
+5     scanf("%d %d %d",a,b,c);
+(gdb) n
+5
+6
+7
+6     return 0;
+(gdb) n
+7   }
+(gdb) n
+main () at p5original.c:25
+25    cmp(a,b,c,&result);
+(gdb) p a
+$1 = 5
+(gdb) p b
+$2 = 6
+(gdb) p c
+$3 = 7
+(gdb) s
+cmp (a=5, b=6, c=7, large=0x7ffd268e71f4) at p5original.c:10
+10    if(a>b && a>c)
+(gdb) n
+12    else if(b>c)
+(gdb) n
+15    *large=c;
+(gdb) n
+16  }
+(gdb) n
+main () at p5original.c:26
+26    output(result);
+(gdb) s
+output (largest=7) at p5original.c:19
+19    printf("tha largest number is %d",largest);
+(gdb) n
+20  }
+(gdb) p largest
+$4 = 7
+(gdb) n
+main () at p5original.c:27
+27    return 0;
+(gdb) n
+28  }(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 262] will be killed.
+
+Quit anyway? (y or n) 
